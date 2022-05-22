@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button *ngIf="user.currentAddress" (click)="getBoxes()">
+   Get AvalibleBoxes
+  </ion-button>
+  <ng-container *ngFor="let item of events">
+    <ion-item (click)="getTickets(item);">
+      {{item}}
+      <ion-button slot="end" *ngIf="user.currentAddress" (click)="viewEvent(item)">
+        View Box
+      </ion-button>
+      <ion-button slot="end" *ngIf="user.currentAddress" (click)="viewEvent(item)">
+        Buy Box
+      </ion-button>
+    </ion-item>
+  </ng-container>
+</ion-content>
