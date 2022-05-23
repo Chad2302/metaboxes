@@ -4,7 +4,7 @@
 /* eslint-disable quote-props */
 
 export const METABOX_V1 = {
-    contractName: 'EventX',
+    contractName: 'MetaBoxes',
     abi: [
         {
             "inputs": [
@@ -17,18 +17,23 @@ export const METABOX_V1 = {
             "name": "_MetaBoxes",
             "outputs": [
                 {
-                    "internalType": "bool",
-                    "name": "avalible",
-                    "type": "bool"
+                    "internalType": "uint256",
+                    "name": "asset_count",
+                    "type": "uint256"
                 },
                 {
                     "internalType": "uint256",
-                    "name": "revealDate",
+                    "name": "max_number",
                     "type": "uint256"
                 },
                 {
                     "internalType": "uint256",
                     "name": "price",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "avalible",
                     "type": "uint256"
                 }
             ],
@@ -46,18 +51,8 @@ export const METABOX_V1 = {
             "name": "_assetRanking",
             "outputs": [
                 {
-                    "internalType": "bool",
+                    "internalType": "uint256",
                     "name": "avalible",
-                    "type": "bool"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "revealDate",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "price",
                     "type": "uint256"
                 }
             ],
@@ -67,18 +62,18 @@ export const METABOX_V1 = {
         {
             "inputs": [
                 {
-                    "internalType": "uint256[]",
-                    "name": "_ass",
-                    "type": "uint256[]"
-                },
-                {
-                    "internalType": "bool",
-                    "name": "_avali",
-                    "type": "bool"
+                    "internalType": "uint256",
+                    "name": "_count",
+                    "type": "uint256"
                 },
                 {
                     "internalType": "uint256",
-                    "name": "_reveal",
+                    "name": "_max",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_avli",
                     "type": "uint256"
                 },
                 {
@@ -88,6 +83,24 @@ export const METABOX_V1 = {
                 }
             ],
             "name": "addBox",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256[]",
+                    "name": "numbers",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "address",
+                    "name": "final_reciever",
+                    "type": "address"
+                }
+            ],
+            "name": "createBox",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
@@ -112,23 +125,23 @@ export const METABOX_V1 = {
                 {
                     "components": [
                         {
-                            "internalType": "uint256[]",
-                            "name": "assets",
-                            "type": "uint256[]"
-                        },
-                        {
-                            "internalType": "bool",
-                            "name": "avalible",
-                            "type": "bool"
+                            "internalType": "uint256",
+                            "name": "asset_count",
+                            "type": "uint256"
                         },
                         {
                             "internalType": "uint256",
-                            "name": "revealDate",
+                            "name": "max_number",
                             "type": "uint256"
                         },
                         {
                             "internalType": "uint256",
                             "name": "price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "avalible",
                             "type": "uint256"
                         }
                     ],
