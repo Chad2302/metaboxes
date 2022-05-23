@@ -5,8 +5,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-button *ngIf="user.currentAddress" (click)="getBoxes()">
-   Get AvalibleBoxes
+  <ion-button (click)="getBoxes()">
+    Get AvalibleBoxes
+  </ion-button>
+  <ion-button *ngIf="nfts" (click)="showNfts = !showNfts">
+    Show NFTS
   </ion-button>
   <ng-container *ngFor="let item of events">
     <ion-item (click)="getTickets(item);">
@@ -19,4 +22,31 @@
       </ion-button>
     </ion-item>
   </ng-container>
+
+
+
+  <ion-grid *ngIf="showNfts">
+    <ng-container *ngIf="nfts">
+      <ng-container *ngFor="let colelction of nfts | keyvalue">
+        <ion-row>
+          <ion-col size="12">
+            <ion-card-title>
+              <b> {{colelction.key}} </b>
+            </ion-card-title>
+          </ion-col>
+          <ion-col size="2" *ngFor="let nft of colelction.value">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>
+                  <b>#{{nft.token_id}}</b>
+                </ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+    </ng-container>
+
+
+  </ion-grid>
 </ion-content>
